@@ -9,7 +9,7 @@
     background-color: aqua;
 }
 .sidebar{
-    transform: translate(-260px,0px,0px);
+    transform: translate3d(-260px, 0px, 0px);
     position: absolute;
     width: 260px;
     background-color: #112e66;
@@ -27,6 +27,8 @@
 }
 .menu li .active{
     background-color: #112e66;
+    /* width: 100%; */
+    /* height: 100%; */
 }
 .menu li a{
     color: #fff;
@@ -42,10 +44,14 @@
     flex: 1;
     padding: 80px 30px;
     background-color: #eee;
-    transform: translate(0,0,0);
+    transform: translate3d(0,0,0);
     transition: transform .3s;
 }
 input[data-function*='swipe']{
+    position: absolute;
+    opacity: 0;
+}
+label[data-function*='swipe']{
     position: absolute;
     top: 30px;
     left: 30px;
@@ -57,16 +63,20 @@ input[data-function*='swipe']{
     color: #444;
     cursor: pointer;
     transition: translate3d(0,0,0);
-    transition: transform .3f;
+    transition: transform .3s;
 }
 input[data-function*='swipe']:checked~label[data-function*='swipe']{
     transform: translate3d(260px,0,0);
+    /* backdrop-filter: blur(80px); */
 }
 input[data-function*='swipe']:checked~ .content{
     transform:  translate3d(245px, 0px, 0px);
+    /* opacity: 80%; */
+    
 }
 input[data-function*='swipe']:checked ~ .sidebar {
     transform: translate3d(0px, 0px, 0px);
+  
   }
   input[data-function*='swipe']:checked ~ .sidebar .menu li {
   width: 100%;
