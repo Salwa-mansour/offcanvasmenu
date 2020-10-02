@@ -1,3 +1,6 @@
+*{
+  box-sizing: border-box;
+}
 .wrapper {
     display: flex;
     min-height: 100%;
@@ -21,7 +24,7 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
   .menu li.active {
-    background: #112e66;
+    background:transparent;
   }
   .menu li a {
     color: #fff;
@@ -63,7 +66,7 @@
     transform: translate3d(260px, 0, 0);
   }
   input[data-function*='swipe']:checked ~ .content {
-    transform: translate3d(245px, 0px, 0px);
+    transform: translate3d(260px, 0px, 0px);
   }
   input[data-function*='swipe']:checked ~ .sidebar {
     transform: translate3d(0px, 0px, 0px);
