@@ -4,7 +4,7 @@
 }
 .wrapper{
     display: flex;
-    min-width: 100%;
+    min-height: 100vh;
 }
 .sidebar{
     transform: translate3d(-260px,0,0);
@@ -12,16 +12,17 @@
     width: 260px;
     background-color: #112e66;
     left: 0;
-    height: 100%;
+    height: 100vh;
     transition: all .3s;  
 }
 .menu li{
+    position: relative;
     padding: 10px;
     list-style: none;
-    /* width: 0; */
+    width: 0%;
     background-color: #17609f;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    z-index: 10;
+    /* z-index: 10; */
 }
 .menu li a {
     color: #fff;
@@ -33,9 +34,9 @@
   .menu li:hover{
       background: #0f4a7e;
   }
-/* .menu li.active{
-    background: transparent;
-} */
+  .menu li.active{
+    background:transparent;
+  }
 .content{
     margin-top: 100px;
     flex: 1;
@@ -45,16 +46,18 @@
     transition: transform .3s;
 }
 input[data-function*="swipe"]{
- opacity: 0;
+    position: absolute;
+    opacity: 0;
+    /* display: none; */
 }
-label{
+label[data-function*='swipe']{
     position: absolute;
     z-index: 1;
     top: 30px;
     left: 30px;
     display: block;
     cursor: pointer;
-    transform: translate3d(0,0,0);
+     transform: translate3d(0,0,0);
     transition: transform .3s;
 }
 input[data-function*="swipe"]:checked ~ label{
@@ -68,5 +71,4 @@ input[data-function*="swipe"]:checked ~ .sidebar{
 }
 input[data-function*='swipe']:checked ~ .sidebar .menu li {
     width: 100%;
-   z-index: 10;
   }
